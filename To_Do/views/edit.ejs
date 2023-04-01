@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/write.css" />
+    <title>To Do</title>
+  </head>
+  <body>
+    <%- include ('nav.html') %>
+    <form action="/update?_method=PUT" method="post">
+      <div class="form signup">
+        <div class="form-header">
+          <div class="show-signup">글쓰기</div>
+        </div>
+        <div class="form-elements">
+          <div class="form-element">
+            <input type="hidden" name="id" value="<%=doList._id%>"/>
+            <input
+              type="date"
+              placeholder="start"
+              name="start"
+              value="<%=doList.start%>"
+            />
+          </div>
+          <div class="form-element">
+            <input
+              type="text"
+              placeholder="Do"
+              name="Do"
+              value="<%=doList.do%>"
+            />
+          </div>
+          <div class="form-element">
+            <input
+              type="date"
+              placeholder="end"
+              name="end"
+              value="<%=doList.end%>"
+            />
+          </div>
+          <div class="form-element">
+            <button type="submit" id="submit-btn">수정하기</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
